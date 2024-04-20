@@ -1,15 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import NameText from "./src/components/nameText";
+import { View, StyleSheet } from "react-native";
+import { NameText } from "./src/components/nameText";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <NameText />
-      </View>
-    );
-  }
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <NameText nameValue="Lucy" />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

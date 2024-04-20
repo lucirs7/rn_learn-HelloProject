@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { Text, StyleSheet } from "react-native";
 
-export default class NameText extends Component {
-    render() {
-        return (
-            <Text style={styles.textStyle}>Lucy</Text>
-        );
-    }
+interface NameTextProps {
+    nameValue: string;
+}
+
+export const NameText: React.FC<NameTextProps> = ({ nameValue }) => {
+    return (
+        <Text style={styles.textStyle}>{nameValue}</Text>
+    );
 }
 
 const styles = StyleSheet.create({
