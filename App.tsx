@@ -1,12 +1,12 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
 export default function App() {
+  
+
   return (
-    <View >
-      <View style={{ width: 50, height: 50, backgroundColor: '#fcad03' }}></View>
-      <View style={{ width: 100, height: 100, backgroundColor: '#fc4299' }}></View>
-      <View style={{ width: 150, height: 150, backgroundColor: '#11870f' }}></View>
+    <View style={styles.container}>
+      <Text>Hola mundo</Text>
     </View>
   );
 }
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
 
 /**
  * First app. Videos 1-14 (inclusive).
+ * Getting to know react native.
  */
 /*
 export default function App() {
@@ -37,6 +38,28 @@ export default function App() {
         uri: "https://images.pexels.com/photos/20552024/pexels-photo-20552024/free-photo-of-mar-amanecer-paisaje-puesta-de-sol.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       }}
         style={styles.image} />
+    </View>
+  );
+}
+*/
+
+/**
+ * Second app. Videos 15-16 (inclusive).
+ * Getting to know flexbox in react native.
+ */
+/*
+export default function App() {
+  return (
+    <View style={{
+      flex: 1,
+      flexDirection: 'column',
+      marginTop: 10,
+      justifyContent: 'space-between',
+      alignItems: 'stretch'
+      }}>
+      <View style={{ width: 100, height: 100, backgroundColor: '#fcad03' }}></View>
+      <View style={{ height: 50, backgroundColor: '#fc4299' }}></View>
+      <View style={{ height: 100, backgroundColor: '#11870f' }}></View>
     </View>
   );
 }
