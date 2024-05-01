@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput } from "react-native";
+import { Text, View, StyleSheet, TextInput, Button, Alert } from "react-native";
 
 export default function App() {
   const [myText, setMyText] = useState('This is your text');
@@ -12,6 +12,13 @@ export default function App() {
         placeholderTextColor={'#700020'}
         placeholder="Enter some text here..."
         onChangeText={(text) => {setMyText(text)}}
+      />
+      <Button
+        title='OK'
+        color={'#700020'}
+        onPress={() => {
+          Alert.alert(`Text entered: ${myText}`)
+        }}
       />
       <Text style={styles.text}>{myText}</Text>
     </View>
@@ -32,6 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: '#7d4a58',
     marginTop: 30,
+    marginBottom: 10,
     padding: 10,
   },
   text: {
@@ -76,6 +84,29 @@ export default function App() {
       <View style={{ width: 100, height: 100, backgroundColor: '#fcad03' }}></View>
       <View style={{ height: 50, backgroundColor: '#fc4299' }}></View>
       <View style={{ height: 100, backgroundColor: '#11870f' }}></View>
+    </View>
+  );
+}
+*/
+
+/**
+ * Third app. Videos 17-19 (inclusive).
+ * About states and textInput.
+ */
+/*
+export default function App() {
+  const [myText, setMyText] = useState('This is your text');
+
+  return (
+    <View style={styles.container}>
+      <Text>🫰</Text>
+      <TextInput
+        style={styles.inputText}
+        placeholderTextColor={'#700020'}
+        placeholder="Enter some text here..."
+        onChangeText={(text) => {setMyText(text)}}
+      />
+      <Text style={styles.text}>{myText}</Text>
     </View>
   );
 }
