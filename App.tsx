@@ -1,26 +1,21 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput, Button, Alert } from "react-native";
+import { Text, View, StyleSheet, TextInput, Button, Alert, TouchableOpacity } from "react-native";
 
 export default function App() {
   const [myText, setMyText] = useState('This is your text');
 
+  const myButtonPressed = () => {
+    Alert.alert(`Text entered was:\n${myText}`)
+  };
+
   return (
     <View style={styles.container}>
       <Text>🫰</Text>
-      <TextInput
-        style={styles.inputText}
-        placeholderTextColor={'#700020'}
-        placeholder="Enter some text here..."
-        onChangeText={(text) => {setMyText(text)}}
-      />
-      <Button
-        title='OK'
-        color={'#700020'}
-        onPress={() => {
-          Alert.alert(`Text entered: ${myText}`)
-        }}
-      />
-      <Text style={styles.text}>{myText}</Text>
+      <TouchableOpacity
+        onPress={myButtonPressed}
+        >
+          <Text style={styles.text}>{myText}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -28,7 +23,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffb0c8',
+    backgroundColor: '#fffffe',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -44,7 +39,12 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 30,
-    fontSize: 25,
+    fontSize: 30,
+    color: '#fffffe',
+    backgroundColor: '#700020',
+    paddingVertical: 10,
+    paddingHorizontal: 40,
+    borderRadius: 10,
   },
 });
 
@@ -105,6 +105,34 @@ export default function App() {
         placeholderTextColor={'#700020'}
         placeholder="Enter some text here..."
         onChangeText={(text) => {setMyText(text)}}
+      />
+      <Text style={styles.text}>{myText}</Text>
+    </View>
+  );
+}
+*/
+
+/**
+ * Fourth app. Video 20.
+ * About 'button'.
+ */
+/*
+export default function App() {
+  const [myText, setMyText] = useState('This is your text');
+
+  return (
+    <View style={styles.container}>
+      <Text>🫰</Text>
+      <TextInput
+        style={styles.inputText}
+        placeholderTextColor={'#700020'}
+        placeholder="Enter some text here..."
+        onChangeText={(text) => {setMyText(text)}}
+      />
+      <Button
+        title='OK'
+        color={'#700020'}
+        onPress={myButtonPressed}
       />
       <Text style={styles.text}>{myText}</Text>
     </View>
