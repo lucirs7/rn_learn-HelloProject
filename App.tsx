@@ -1,12 +1,19 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { Text, View, StyleSheet, TextInput } from "react-native";
 
 export default function App() {
-  
+  const [myText, setMyText] = useState('This is your text');
 
   return (
     <View style={styles.container}>
-      <Text>Hola mundo</Text>
+      <Text>🫰</Text>
+      <TextInput
+        style={styles.inputText}
+        placeholderTextColor={'#700020'}
+        placeholder="Enter some text here..."
+        onChangeText={(text) => {setMyText(text)}}
+      />
+      <Text style={styles.text}>{myText}</Text>
     </View>
   );
 }
@@ -14,13 +21,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EA7773',
+    backgroundColor: '#ffb0c8',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
-    width: '85%',
-    height: '50%',
+  inputText: {
+    width: 250,
+    height: 50,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#7d4a58',
+    marginTop: 30,
+    padding: 10,
+  },
+  text: {
+    marginTop: 30,
+    fontSize: 25,
   },
 });
 
