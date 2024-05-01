@@ -1,20 +1,30 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput, Button, Alert, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Alert, TouchableOpacity } from "react-native";
 
 export default function App() {
-  const [myText, setMyText] = useState('This is your text');
+  //const [myText, setMyText] = useState('Generate random colour');
+
+  const generateRandomColour = (): string => {
+    const randomRed: Number = Math.floor((Math.random() * 256));
+    const randomGreen: Number = Math.floor((Math.random() * 256));
+    const randomBlue: Number = Math.floor((Math.random() * 256));
+
+    return `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+  };
+
+  const [randomColour, setRandomColour] = useState(generateRandomColour());
 
   const myButtonPressed = () => {
-    Alert.alert(`Text entered was:\n${myText}`)
+    Alert.alert('Text entered!');
   };
 
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, backgroundColor: randomColour}}>
       <Text>🫰</Text>
       <TouchableOpacity
-        onPress={myButtonPressed}
+        onPress={() => setRandomColour(generateRandomColour)}
         >
-          <Text style={styles.text}>{myText}</Text>
+          <Text style={styles.text}>Generate random background color</Text>
       </TouchableOpacity>
     </View>
   );
@@ -23,7 +33,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fffffe',
+    backgroundColor: '#fffff1',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -39,12 +49,14 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 30,
-    fontSize: 30,
-    color: '#fffffe',
-    backgroundColor: '#700020',
+    fontSize: 16,
+    color: '#11111f',
+    backgroundColor: '#ff94b2',
     paddingVertical: 10,
     paddingHorizontal: 40,
     borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#fffffe',
   },
 });
 
