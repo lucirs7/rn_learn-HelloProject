@@ -1,3 +1,5 @@
+# Intro to React Native #
+
 Just an intro project in a react native course.
 
 - Learning how to create a project,
